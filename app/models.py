@@ -20,7 +20,7 @@ class CuentaUsuario(models.Model):
         ('ADMIN', 'ADMIN')
     ]
 
-    tipo_socio = models.TextField(null=False, blank=False, choices=TIPO_SOCIO, default=TIPO_SOCIO[1])
+    tipo_socio = models.CharField(null=False, blank=False, choices=TIPO_SOCIO, default=TIPO_SOCIO[1])
 
 class Cancha(models.Model):
     id_cancha=models.UUIDField(primary_key=True, default=uuid.uuid4())
@@ -38,6 +38,32 @@ class HorarioCancha(models.Model):
     id_bloque = models.ForeignKey(HorarioBase, on_delete=models.PROTECT, null=False)
 
     #Atributos de la tabla
+    id_horario = models.UUIDField(primary_key=True, default=uuid.uuid4())
     fecha_horario = models.DateField(null=False)
     disponibilidad = models.BooleanField(default=True)
     observacion = models.TextField(null=True, blank=True)
+
+class Reserva(models.Model):
+    #Foraneas
+    usuario = models.ForeignKey(CuentaUsuario, on_delete=models.PROTECT)
+    horario_cancha = models.ForeignKey(HorarioCancha, on_delete=models.PROTECT)
+
+    #Atributos de la tabla
+    fecha_reserva = models.DateField(null=False, blank=False)
+
+class Imagen(models.Model):
+    #Atributos de la clase
+    id_imagen = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    imagen = models.ImageField(null=False, blank=False)
+class Noticia(models.Model):
+    #Foraneas
+    usuario = models.ForeignKey(CuentaUsuario, on_delete=models.PROTECT)
+
+    #atributos de la tabla
+    titulo_noticia = models.CharField(max_length=100, null=False, blank=False)
+    sub_titulo = models.CharField(max_length=100, null=False, blank=False)
+    fecha = models.DateField(null=False, blank=False)
+    fecha_noticia = models.DateField(null=False, blank=False)
+    cuerpo = models.TextField(null=False, blank=False)
+    imagen = models.ForeignKey(Imagen, on_delete=models.PROTECT)
+
