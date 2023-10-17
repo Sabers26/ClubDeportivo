@@ -6,7 +6,6 @@ import uuid
 class CuentaUsuario(models.Model):
     #Campos referentes a la cuenta
     id_cuenta = models.UUIDField(primary_key=True, default=uuid.uuid4())
-    usuario = models.CharField(null=False, blank=False, max_length=20)
     password = models.CharField(null=False, blank=False, max_length=24)
     es_admin = models.BooleanField(default=False)
 
@@ -20,7 +19,7 @@ class CuentaUsuario(models.Model):
         ('ADMIN', 'ADMIN')
     ]
 
-    tipo_socio = models.CharField(null=False, blank=False, choices=TIPO_SOCIO, default=TIPO_SOCIO[1])
+    tipo_socio = models.CharField(null=False, blank=False, choices=TIPO_SOCIO, default=TIPO_SOCIO[1], max_length=100)
 
 class Cancha(models.Model):
     id_cancha=models.UUIDField(primary_key=True, default=uuid.uuid4())
