@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+{% endblock css %}
+
+{% block contenido %}
+    <div class="cubotitulo">
+
+        <div class="titulo">
+        <H2>Club Deportivo
+        </H2>
+
+        <h2>
+            Los boldos
+        </h2>
+
+        </div>
+
+
+
+        <div class="container">
+        
+        </div>
+    </div>
+
+
+    <h3>
+        Noticias
+    </h3>
+
+    <div class="noticias">
+        <div class="buboimg1">
+        <img src="{% static 'imagenes/' %}noticiaimg1.jpeg" alt="">
+        </div>
+
+        <div class="cuboimg2">
+        <img src="{% static 'imagenes/' %}noticiaimg2.jpeg" alt="">
+        </div>
+
+        <div class="cuboimg3">
+        <img src="{% static 'imagenes/' %}noticiaimg3..jpeg" alt="">
+        </div>
+
+
+    </div>
+
+    <div class="rectangulocolor">
+        <h3> Galeria de imagenes</h3>
+        <div class="carousel">
+        <div class="slide-container">
+            <div class="slide 1">
+            <img src="{% static 'imagenes/' %}carruselimg1.jpeg" alt="Imagen 1">
+            </div>
+            <div class="slide 2">
+            <img src="{% static 'imagenes/' %}carruselimg2.jpeg" alt="Imagen 2">
+            </div>
+            <div class="slide 3">
+            <img src="{% static 'imagenes/' %}carruselimg3.jpeg" alt="Imagen 3">
+            </div>
+            <div class="slide 4">
+            <img src="{% static 'imagenes/' %}carruselimg5.jpeg" alt="Imagen 3">
+            </div>
+            <div class="slide 5">
+            <img src="{% static 'imagenes/' %}carruselimg5(2).jpeg" alt="Imagen 3">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="prev-button">&#8249;</button>
+            <button class="next-button">&#8250;</button>
+        </div>
+        </div>
+
+    </div>
+{% endblock contenido %}
+
+{% block script %}
+    <script src="{% static 'js/' %}index.js"></script>
+{% endblock script %}

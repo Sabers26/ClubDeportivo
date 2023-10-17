@@ -1,19 +1,102 @@
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block encabezado %}
-    {% comment %} Aqui iran los css y cualquier tipo de informacion que necesite ser cargada en la parte de head {% endcomment %}
-    {% endblock encabezado %}
-</head>
-<body>
-    <!-- Aca se hace  la plantilla con navbar, footer, etc.-->
-    {% block contenido %}
-    
-    {% endblock contenido %}
+{% load static %}
 
-    {% block javascript %}
-    
-    {% endblock javascript %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  {% block css %}
+  
+  {% endblock css %}
+  <script async src="https://kit.fontawesome.com/2120ec9d1e.js" crossorigin="anonymous"></script>
+  <script async src="{% static 'js/' %}index.js"></script>
+  <title>Club los boldos</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu"></div>
+    <img class="logo" src="{% static 'imagenes/' %}logo.png" alt="">
+    <nav>
+
+
+      <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sobre el club</a></li>
+        <li><a href="#">Arriendo canchas</a></li>
+        <li><a href="#">Contactos</a></li>
+
+
+
+
+      </ul>
+    </nav>
+  </header>
+  
+  {% block contenido %}
+  
+  {% endblock contenido %}
+
+
+
+
+
+
 </body>
+<footer>
+
+
+  <div class="content">
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Nosotros</h3>
+        <p>Mision y vision</p>
+        <p>Club</p>
+        <P>Socios</P>
+      </div>
+      <div class="footer-section">
+        <h3>Servicios</h3>
+        <ul>
+          <li>Arriendo de canchas</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <ul>
+          <li>Teléfono: 452-440923</li>
+          <li>Email: clublosboldos@gmail.com</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociales</h3>
+        <ul>
+          <li><a href="#">Club los boldos</a></li>
+          <li><a href="#">@club_los.boldos</a></li>
+          <li><a href="#">Los_boldos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Ubicación</h3>
+        <p>Los carrera 928, Concepción, Chile</p>
+      </div>
+    </div>
+  </footer>
+
+</footer>
+
+{% block script %}
+  
+{% endblock script %}
+
 </html>
+
+
+
+
+
