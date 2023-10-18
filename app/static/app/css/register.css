@@ -1,0 +1,64 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(../assets/fondo.png);
+}
+
+.seccion{
+    width: 900px;
+    background-image: url(../assets/fondo.png);
+    padding: 30px;
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 4px ;
+    font-family: 'calibri';
+    color: rgb(0, 0, 0);
+    box-shadow: 7px 13px 37px #000000;
+    padding: 0px;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    margin-top: 4%;
+    color: whitesmoke;
+}
+
+.labels{
+    color: whitesmoke;
+    margin-left: 5%;
+    float: left;
+    margin-right: 50%;
+}
+
+.inp{
+    width: 90%;
+    margin-bottom: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+h2{
+    padding-top: 4%;
+    margin-bottom: 10px;
+    color: whitesmoke;
+}
+
+.boton{
+    
+    margin: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.boton:hover{
+    transform: translate(0rem, 0.1rem);
+    transition: all 0.5s ease-in-out;
+}
+
+.referencias{
+    text-align: center;
+    width: 200px;
+}
