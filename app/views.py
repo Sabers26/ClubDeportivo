@@ -10,3 +10,5 @@ def login_view(request):
 def register(request):
     return render(request, 'register.html')
 
+def adminModificar(request):
+    return render(request, 'adminModificar.html')
