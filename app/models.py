@@ -1,8 +1,32 @@
+from django.core.exceptions import ValidationError
 from django.db import models
+from itertools import cycle
 import uuid
 
-# Create your models here.
+#Validador de rut
+def validar_rut(rut):
+    rut = rut.upper();
+    rut = rut.replace("-","")
+    rut = rut.replace(".","")
+    aux = rut[:-1]
+    dv = rut[-1:]
+    
+    revertido = map(int, reversed(str(aux)))
 
+    factors = cycle(range(2,8))
+
+    s = sum(d * f for d, f in zip(revertido,factors))
+
+    res = (-s)%11
+    if str(res) == dv:
+        return True
+    elif dv=="K" and res==10:
+        return True
+    else:
+        raise ValidationError("Rut invalido (ejemplo: 12345678-9)")
+
+
+# Create your models here.
 class CuentaUsuario(models.Model):
     #Campos referentes a la cuenta
     id_cuenta = models.UUIDField(primary_key=True, default=uuid.uuid4())
@@ -10,7 +34,7 @@ class CuentaUsuario(models.Model):
     es_admin = models.BooleanField(default=False)
 
     #Campos referentes al usuario
-    rut_usuario = models.CharField(null=False, blank=False, max_length=10)
+    rut_usuario = models.CharField(null=False, blank=False, max_length=10, validators=[validar_rut])
     nombre_usuario = models.CharField(null=False, blank=False, max_length=30)
 
     TIPO_SOCIO = [
