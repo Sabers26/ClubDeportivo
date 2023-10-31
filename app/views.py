@@ -12,3 +12,6 @@ def register(request):
 
 def adminModificar(request):
     return render(request, 'admin/adminModificar.html')
+
+def forNoticias(request):
+    return render(request, 'admin/forNoticias.html')
