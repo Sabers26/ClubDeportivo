@@ -50,3 +50,8 @@ h1{
     margin-left: 5%;
     float: left;
 }
+
+textarea{
+    width: 90%;
+    margin-bottom: 10px;
+}

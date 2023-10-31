@@ -15,7 +15,7 @@
             <label class="labels">Fecha de la noticia</label>
             <input class="contenido" type="date" name="Fecha" id="Fecha">
             <label class="labels">Cuerpo de la noticia</label>
-            <input class="contenido" type="text" name="Cuerpo" id="Cuerpo" placeholder="Ingrese Cuerpo">
+            <textarea id="area" name="cuerpo" rows="10" cols="40" placeholder="Escribe el cuerpo"></textarea>
             <label class="labels">Imagenes de la noticia</label>
             <input class="contenido" type="file" name="Imagen" id="Imagen" placeholder="Imagen">
 
@@ -25,3 +25,7 @@
 </body>
 
 {% endblock contenido %}
+
+{% block script %}
+<script src="{% static 'app/' %}js/forNoticia.js"></script>
+{% endblock script %}
