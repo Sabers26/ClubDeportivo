@@ -1,0 +1,31 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app/' %}css/for_noticias.css "> 
+
+{% block contenido %}
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <section class="general">
+            <h1>Formulario Noticias</h1>
+            <label class="labels">Titulo de la noticia</label>
+            <input class="contenido" type="text" name="titulo" id="titulo" placeholder="Ingrese titulo">
+            <label class="labels">Sub-titulo de la noticia</label>
+            <input class="contenido" type="text" name="Sub-titulo" id="Sub-titulo" placeholder="Ingrese Sub-titulo">
+            <label class="labels">Fecha de la noticia</label>
+            <input class="contenido" type="date" name="Fecha" id="Fecha">
+            <label class="labels">Cuerpo de la noticia</label>
+            <textarea id="area" name="cuerpo" rows="10" cols="40" placeholder="Escribe el cuerpo"></textarea>
+            <label class="labels">Imagenes de la noticia</label>
+            <input class="contenido" type="file" name="Imagen" id="Imagen" placeholder="Imagen">
+
+            <input class="boton" type="submit" value="Guardar">
+        </section>
+    </form>
+</body>
+
+{% endblock contenido %}
+
+{% block script %}
+<script src="{% static 'app/' %}js/forNoticia.js"></script>
+{% endblock script %}

@@ -1,25 +1,31 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'app/' %}css/register.css "> 
+<link rel="stylesheet" href="{% static 'app/' %}css/adminModificar.css "> 
 
 {% block contenido %}
 <body>
-    <h1>¡Registro!</h1>
+    <h1>Modificacion</h1>
 
     <section class="seccion">
         <form action="" method="post">
-            <h2>Formulario de registro</h2>
+            <h2>Formulario de modificacion</h2>
             <label class="labels"> Nombre </label>
             <input class="inp" type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Ingrese su nombre completo">
+            <label class="labels"> tipo usuario </label>
+            <select name="tipo" id="tipo">
+                <option value="0">Tipo Usuario</option>
+                <option value="1">admin</option>
+                <option value="1">socios colaborador</option>
+            </select>
             <label class="labels"> Rut </label>
             <input class="inp" type="text" name="rut_usuario" id="rut_usuario" placeholder="Ingrese su rut">
             <label class="labels">Contraseña</label>
             <input class="inp" type="text" name="" id="" placeholder="Ingrese su contraseña">
 
-            <input class="boton" type="button" value="Registrar">
+            <input class="boton" type="button" value="Modificar">
+            <input class="boton" type="button" value="Cancelar">
         </form>
 
-        <p>Ya tienes cuenta?<a class="a" href="{% url 'login' %}">logeate</a></p>
     </section>
 </body>
 

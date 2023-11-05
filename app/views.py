@@ -8,7 +8,10 @@ def login_view(request):
     return render(request, 'login.html')
 
 def register(request):
-    return render(request, 'register.html')
+    return render(request, 'admin/register.html')
 
 def adminModificar(request):
-    return render(request, 'adminModificar.html')
+    return render(request, 'admin/adminModificar.html')
+
+def forNoticias(request):
+    return render(request, 'admin/forNoticias.html')

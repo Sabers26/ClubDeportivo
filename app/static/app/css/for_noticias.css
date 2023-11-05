@@ -28,7 +28,6 @@ body{
 
 .boton{
     width: 30%;
-    height: 40%;
     margin: 20px;
     background-color: #000000;
     color: white;
@@ -50,4 +49,9 @@ h1{
     color: white;
     margin-left: 5%;
     float: left;
+}
+
+textarea{
+    width: 90%;
+    margin-bottom: 10px;
 }
