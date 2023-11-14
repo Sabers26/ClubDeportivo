@@ -36,7 +36,7 @@ class CustomUserManager(BaseUserManager):
     def create_user(self, rut, password=None, **extra_fields):
         if not rut:
             raise ValueError("Debe ingreasr un RUT para crear al usuario")
-        if validarRut(rut):
+        if validarRut(rut)==True:
             user = self.model(rut=rut, **extra_fields)
             user.set_password(password)
             user.save(using=self._db)
@@ -58,13 +58,7 @@ class CustomUser(AbstractBaseUser):
     rut = models.CharField(unique=True, max_length=12)
     nombre_usuario = models.CharField(null=False, blank=False, max_length=50)
 
-    TIPO_SOCIO = [
-        ('SocioColab', 'Socio Colaborador'),
-        ('Socio', 'Socio'),
-        ('ADMIN', 'ADMIN')
-    ]
-
-    tipo_socio = models.CharField(default=TIPO_SOCIO[1], choices=TIPO_SOCIO, max_length=15)
+    tipo_socio = models.CharField(default="SOCIO", max_length=20)
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
